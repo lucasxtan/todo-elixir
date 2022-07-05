@@ -22,6 +22,20 @@ defmodule Todos do
     ["eat apple", "read book", "elixir series", "exercise"]
   end
 
+  def complete_todo(tasks, task) do
+    if contains?(tasks, task) do
+      # execute this block
+      List.delete(tasks, task)
+    else
+      # otherwise execute this block
+      :not_found_error
+    end
+  end
+
+  def add_new_todo(tasks, task) do
+    List.insert_at(tasks, -1, task)
+  end
+
   def contains?(tasks, task) do
     Enum.member?(tasks, task)
   end
