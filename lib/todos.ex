@@ -10,7 +10,11 @@ defmodule Todos do
     # new code - pipe operator |>
     # The pipe operator passes the result of an expression as the first parameter of another expression
     {number_of_tasks, _} = IO.gets("Enter the number of tasks you want to add: ") |> Integer.parse()
-    number_of_tasks
+
+    for _ <- 1..number_of_tasks do
+      IO.gets("Enter a Task: ") |> String.trim()
+       # String.trim() removes trailing whitespace like \n
+    end
   end
 
   # create list, aka enumerable in elixir
