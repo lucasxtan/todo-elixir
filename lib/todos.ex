@@ -13,12 +13,19 @@ defmodule Todos do
     number_of_tasks
   end
 
+  # create list, aka enumerable in elixir
   def temp_todos do
-    ["eat apple", "read book", "elxir series", "exercise"]
+    ["eat apple", "read book", "elixir series", "exercise"]
   end
 
   def contains?(tasks, task) do
     Enum.member?(tasks, task)
+  end
+
+  def keyword_search(tasks, word) do
+    for task <- tasks, String.contains?(task, word) do
+      task
+    end
   end
 
   def random_task(tasks) do
