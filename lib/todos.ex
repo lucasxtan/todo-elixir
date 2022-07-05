@@ -16,4 +16,14 @@ defmodule Todos do
   def temp_todos do
     ["eat apple", "read book", "elxir series", "exercise"]
   end
+
+  def contains?(tasks, task) do
+    Enum.member?(tasks, task)
+  end
+
+  def random_task(tasks) do
+    [task] = Enum.take_random(tasks, 1)
+    task
+  end
+
 end
