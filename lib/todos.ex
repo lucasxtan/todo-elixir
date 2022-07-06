@@ -51,4 +51,11 @@ defmodule Todos do
     task
   end
 
+  def save(tasks, filename) do
+    # invoking erlang code
+    # converting our list so that it can be written to our file system
+    binary = :erlang.term_to_binary(tasks)
+    File.write(filename, binary)
+  end
+
 end
