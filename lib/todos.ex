@@ -58,4 +58,14 @@ defmodule Todos do
     File.write(filename, binary)
   end
 
+  def read(filename) do
+    case File.read(filename) do
+      {:ok, binary} -> :erlang.binary_to_term(binary)
+      {:error, _reason} -> "File does not exist"
+    end
+    # {_status, binary} = File.read(filename)
+    # :erlang.binary_to_term(binary)
+  end
+
+
 end
