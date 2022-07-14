@@ -40,6 +40,7 @@ defmodule Todos do
     Enum.member?(tasks, task)
   end
 
+  #search task
   def keyword_search(tasks, word) do
     for task <- tasks, String.contains?(task, word) do
       task
